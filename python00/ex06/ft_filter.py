@@ -1,4 +1,5 @@
 RED = "\033[91m"
+BOLD = "\033[1m"
 RESET = "\033[0m"
 
 # Iterator : objet qui te donne ses valeurs une par une,
@@ -16,18 +17,22 @@ def ft_filter(function, iterable):
         return (x for x in iterable if function(x))
 
 
-# -------------------- TESTS --------------------
+def is_upper(s):
+    return s.isupper()
 
 
-# def is_upper(s):
-#     return s.isupper()
+def main():
+    print(f"{BOLD}---------- filter() ----------{RESET}")
+    print(list(filter(is_upper, "aBcDeF")))
+    print(list(filter(None, [0, 1, "", "hi", False, True])))
+    print()
+
+    print(f"{BOLD}---------- ft_filter() ----------{RESET}")
+    print(list(ft_filter(is_upper, "aBcDeF")))
+    print(list(ft_filter(None, [0, 1, "", "hi", False, True])))
 
 
-# print(f"{BOLD}---------- filter() ----------{RESET}")
-# print(list(filter(is_upper, "aBcDeF")))
-# print(list(filter(None, [0, 1, "", "hi", False, True])))
-# print()
+# -------------------- FUNCTION CALL --------------------
 
-# print(f"{BOLD}---------- ft_filter() ----------{RESET}")
-# print(list(ft_filter(is_upper, "aBcDeF")))
-# print(list(ft_filter(None, [0, 1, "", "hi", False, True])))
+if __name__ == "__main__":
+    main()

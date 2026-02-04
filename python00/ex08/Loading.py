@@ -22,11 +22,16 @@ def ft_tqdm(lst: range) -> None:
         yield item
 
 
-# ------------- TESTS --------------#
+def main():
+    for elem in ft_tqdm(range(333)):
+        sleep(0.005)
+    print()
+    for elem in tqdm(range(333)):
+        sleep(0.005)
+    print()
 
-for elem in ft_tqdm(range(333)):
-    sleep(0.005)
-print()
-for elem in tqdm(range(333)):
-    sleep(0.005)
-print()
+
+# -------------------- FUNCTION CALL --------------------
+
+if __name__ == "__main__":
+    main()
