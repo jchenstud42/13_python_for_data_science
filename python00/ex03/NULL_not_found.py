@@ -27,8 +27,6 @@ def NULL_not_found(object: any) -> int:
 
 # ------------- TESTS --------------#
 
-# from NULL_not_found import NULL_not_found
-
 # Nothing = None
 # Garlic = float("NaN")
 # Zero = 0
