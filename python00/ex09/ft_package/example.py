@@ -2,5 +2,6 @@
 
 
 def print_hi():
+    """prints hi!"""
     print("hi!")
     return
