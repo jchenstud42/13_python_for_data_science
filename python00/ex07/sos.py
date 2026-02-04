@@ -48,7 +48,7 @@ def str_to_morse(str, dictionnary):
     cap_str = str.upper()
     # return [] : retourne une list
     # join() : transforme la liste en chaine
-    return " ".join([(lambda c: dictionnary.get(c))(c) for c in cap_str])
+    return " ".join(dictionnary.get(c) for c in cap_str)
 
 
 def main():
