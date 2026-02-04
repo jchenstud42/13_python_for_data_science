@@ -45,6 +45,7 @@ NESTED_MORSE = {
 
 
 def str_to_morse(str, dictionnary):
+    """Takes a string and encodes it in Morse Code"""
     cap_str = str.upper()
     # return [] : retourne une list
     # join() : transforme la liste en chaine
