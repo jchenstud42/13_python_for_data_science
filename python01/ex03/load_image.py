@@ -6,7 +6,7 @@ RESET = "\033[0m"
 
 
 def ft_load(path: str):
-    """Loads an image, prints its format, and its pixels content in RGB format"""
+    """Loads img, prints its format, and its pixels content in RGB format"""
     assert os.path.exists(path), "file not found"
     # split l'extension du nom du fichier, et check l'extension ([1])
     ext = os.path.splitext(path)[1]
@@ -14,19 +14,23 @@ def ft_load(path: str):
 
     try:
         img = iio.imread(path)
+
+        # img : class 'numpy.ndarray', img[y, x] -> [R,G,B]
+        print(f"The shape of image is: {img.shape}")
+        print(img)
+
+        return img
+
     except Exception as error:
         raise RuntimeError(f"{RED}failed to read image: {error}{RESET}")
-
-    # img : class 'numpy.ndarray', img[y, x] -> [R,G,B]
-    print(f"The shape of image is: {img.shape}")
-    print(img)
-    return img
 
 
 def main():
     try:
         print(ft_load("../landscape.jpg"))
 
+    except RuntimeError as error:
+        print(f"{RED}Error: {error}{RESET}")
     except AssertionError as error:
         print(f"{RED}AssertionError: {error}{RESET}")
 

@@ -10,12 +10,12 @@ def prepare_img(image):
     """Prepares an image to be displayed"""
     try:
         crop = image[100:500, 450:850]
-        grey = np.dot(crop[..., :3], [0.299, 0.587, 0.114])
-        res = grey[:, :, None]
+        g = np.dot(crop[..., :3], [0.299, 0.587, 0.114])
+        res = g[:, :, None]
         print(f"The shape of image is: {res.shape} or {res.squeeze().shape}")
         print(res)
 
-        return grey
+        return g
 
     except Exception as error:
         raise RuntimeError(f"{RED}failed to prepare image: {error}{RESET}")
@@ -24,15 +24,16 @@ def prepare_img(image):
 def rotate_img(image):
     """Rotates an image by 90° counterclockwise, and displays it"""
     try:
-        grey = prepare_img(image)
-        # rotated : Parcours les lignes (y for len(grey)) les colonnes (x for len(grey[0]))
-        # et on les intervertis : rotated[x][y] = grey[y][x] -> transposition
-        rotated = [[grey[y][x] for y in range(len(grey))] for x in range(len(grey[0]))]
+        g = prepare_img(image)
+        # rotated : Parcours les lignes (y for len(g))
+        # les colonnes (x for len(g[0])) et on les intervertis :
+        # rotated[x][y] = g[y][x] -> transposition
+        rotated = [[g[y][x] for y in range(len(g))] for x in range(len(g[0]))]
         rotated = np.array(rotated)
 
         print(f"\nNew shape after transpose: {rotated.shape}")
         print(rotated)
-        plt.imshow(rotated, cmap="grey", vmin=0, vmax=255)
+        plt.imshow(rotated, cmap="g", vmin=0, vmax=255)
         plt.show()
 
     except Exception as error:
@@ -46,8 +47,8 @@ def main():
 
     except KeyboardInterrupt:
         print(f"{RED}\nKeyboardInterrupt : signal catched{RESET}")
-    except AssertionError as error:
-        print(f"{RED}AssertionError: {error}{RESET}")
+    except RuntimeError as error:
+        print(f"{RED}Error: {error}{RESET}")
 
 
 # -------------------- FUNCTION CALL --------------------

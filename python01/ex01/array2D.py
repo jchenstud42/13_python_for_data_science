@@ -33,6 +33,8 @@ def main():
 
     except AssertionError as error:
         print(f"{RED}AssertionError: {error}{RESET}")
+    except RuntimeError as error:
+        print(f"{RED}Error: {error}{RESET}")
 
 
 # -------------------- FUNCTION CALL --------------------

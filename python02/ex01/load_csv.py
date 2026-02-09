@@ -18,13 +18,8 @@ def load(path: str):
         return None
 
     try:
-        datafile = pd.read_csv(path)
-        print(
-            f"{BOLD}\n---- Loading dataset of dimensions \
-              {datafile.shape}{RESET}\n"
-        )
-
-        return datafile
+        dataframe = pd.read_csv(path)
+        return dataframe
 
     except Exception as error:
         print(f"{RED}failed to load {path}: {error}{RESET}")

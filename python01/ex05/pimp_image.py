@@ -37,7 +37,7 @@ def ft_red(array) -> np.ndarray:
         return red
 
     except Exception as error:
-        raise RuntimeError(f"{RED}failed to apply red filter: {error}{RESET}")
+        raise RuntimeError(f"{RED}failed to apply filter: {error}{RESET}")
 
 
 def ft_green(array) -> np.ndarray:
@@ -54,7 +54,7 @@ def ft_green(array) -> np.ndarray:
         return green
 
     except Exception as error:
-        raise RuntimeError(f"{RED}failed to apply green filter: {error}{RESET}")
+        raise RuntimeError(f"{RED}failed to apply filter: {error}{RESET}")
 
 
 def ft_blue(array) -> np.ndarray:
@@ -71,7 +71,7 @@ def ft_blue(array) -> np.ndarray:
         return blue
 
     except Exception as error:
-        raise RuntimeError(f"{RED}failed apply blue filter: {error}{RESET}")
+        raise RuntimeError(f"{RED}failed apply filter: {error}{RESET}")
 
 
 def ft_grey(array) -> np.ndarray:
@@ -87,7 +87,7 @@ def ft_grey(array) -> np.ndarray:
         return grey
 
     except Exception as error:
-        raise RuntimeError(f"{RED}failed apply grey filter: {error}{RESET}")
+        raise RuntimeError(f"{RED}failed apply filter: {error}{RESET}")
 
 
 def main():
@@ -104,8 +104,8 @@ def main():
 
     except KeyboardInterrupt:
         print(f"{RED}\nKeyboardInterrupt : signal catched{RESET}")
-    except AssertionError as error:
-        print(f"{RED}AssertionError: {error}{RESET}")
+    except RuntimeError as error:
+        print(f"{RED}Error: {error}{RESET}")
 
 
 # -------------------- FUNCTION CALL --------------------

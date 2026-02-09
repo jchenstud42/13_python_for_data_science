@@ -14,7 +14,10 @@ def zoom_img(image):
         grey = np.dot(zoomed[..., :3], [0.299, 0.587, 0.114])
         # res : permet de remettre le canal responsable du RGB
         res = grey[:, :, None]
-        print(f"\nNew shape after slicing: {res.shape} or {res.squeeze().shape}")
+        print(
+            f"\nNew shape after slicing: {res.shape} \
+              or {res.squeeze().shape}"
+        )
         print(res)
         plt.imshow(res, cmap="grey", vmin=0, vmax=255)
         plt.show()
@@ -30,8 +33,8 @@ def main():
 
     except KeyboardInterrupt:
         print(f"{RED}\nKeyboardInterrupt : signal catched{RESET}")
-    except AssertionError as error:
-        print(f"{RED}AssertionError: {error}{RESET}")
+    except RuntimeError as error:
+        print(f"{RED}Error: {error}{RESET}")
 
 
 # -------------------- FUNCTION CALL --------------------
