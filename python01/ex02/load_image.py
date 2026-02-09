@@ -6,6 +6,7 @@ RESET = "\033[0m"
 
 
 def ft_load(path: str):
+    """Loads an image, prints its format, and its pixels content in RGB format"""
     assert os.path.exists(path), "file not found"
     # split l'extension du nom du fichier, et check l'extension ([1])
     ext = os.path.splitext(path)[1]
