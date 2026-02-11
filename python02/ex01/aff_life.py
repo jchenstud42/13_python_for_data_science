@@ -11,13 +11,15 @@ def life_expec_graph(dt, country):
         from a dataframe"""
     try:
         country_data = dt.set_index("country").loc[country].astype(float)
+        country_data.index = country_data.index.astype(int)
 
         # Appelle matplotlib en utilisant Pandas
-        country_data.plot(
+        ax = country_data.plot(
             title=f"{country} Life expectancy Projections",
             xlabel="Year",
             ylabel="Life expectancy",
         )
+        ax.set_xticks(range(1800, 2101, 40))
 
         plt.show()
 
