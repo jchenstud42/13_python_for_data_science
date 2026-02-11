@@ -6,7 +6,7 @@ BOLD = "\033[1m"
 RESET = "\033[0m"
 
 
-def draw_graph_country(dt, country):
+def life_expec_graph(dt, country):
     """Displays a graph of a country's life expectancy projection \
         from a dataframe"""
     try:
@@ -31,7 +31,7 @@ def draw_graph_country(dt, country):
 def main():
     try:
         dataframe = load("../life_expectancy_years.csv")
-        draw_graph_country(dataframe, "France")
+        life_expec_graph(dataframe, "France")
 
     except KeyboardInterrupt:
         print(f"{RED}\nKeyboardInterrupt : signal catched{RESET}")
