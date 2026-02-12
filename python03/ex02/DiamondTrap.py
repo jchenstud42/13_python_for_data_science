@@ -35,18 +35,22 @@ class King(Baratheon, Lannister):
     # property : methode deguisee en attribut, equivalent d'un set-getter
     @property
     def eyes(self):
+        """Eyes color getter"""
         return self._eyes
 
     @eyes.setter
     def eyes(self, color):
+        """Eyes color setter"""
         self._eyes = color
 
     @property
     def hairs(self):
+        """Hair color getter"""
         return self._hairs
 
     @hairs.setter
     def hairs(self, color):
+        """Hair color setter"""
         self._hairs = color
 
 
