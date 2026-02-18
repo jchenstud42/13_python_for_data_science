@@ -35,23 +35,40 @@ class King(Baratheon, Lannister):
     # property : methode deguisee en attribut, equivalent d'un set-getter
     @property
     def eyes(self):
-        """Eyes color getter"""
+        """Property for Eyes color getter"""
         return self._eyes
 
     @eyes.setter
     def eyes(self, color):
-        """Eyes color setter"""
+        """Property Eyes color setter"""
         self._eyes = color
 
     @property
     def hairs(self):
-        """Hair color getter"""
+        """Property Hair color getter"""
         return self._hairs
 
     @hairs.setter
     def hairs(self, color):
-        """Hair color setter"""
+        """Property Hair color setter"""
         self._hairs = color
+
+    # Wrapper qui ne servent pas a grand chose, pour ne pas casser le main
+    def get_eyes(self):
+        """Eyes color getter"""
+        return self.eyes
+
+    def set_eyes(self, color):
+        """Eyes color setter"""
+        self.eyes = color
+
+    def get_hairs(self):
+        """Hair color getter"""
+        return self.hairs
+
+    def set_hairs(self, color):
+        """Hair color setter"""
+        self.hairs = color
 
 
 def main():
@@ -59,10 +76,10 @@ def main():
         Joffrey = King("Joffrey")
         print(Joffrey.__dict__)
 
-        Joffrey.eyes = "blue"
-        Joffrey.hairs = "light"
-        print(Joffrey.eyes)
-        print(Joffrey.hairs)
+        Joffrey.set_eyes("blue")
+        Joffrey.set_hairs("light")
+        print(Joffrey.get_eyes())
+        print(Joffrey.get_hairs())
         print(Joffrey.__dict__)
 
     except TypeError as error:

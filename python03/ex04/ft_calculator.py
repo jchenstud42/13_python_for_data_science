@@ -22,20 +22,20 @@ class Calculator:
     @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
         """Adds each element of two vectors"""
-        result = [x + y for x, y in zip(V1, V2)]
+        result = [float(x + y) for x, y in zip(V1, V2)]
         print(f"Add Vector is : {result}")
 
     @staticmethod
     def sous_vec(V1: list[float], V2: list[float]) -> None:
         """Substracts each element of two vectors"""
-        result = [x - y for x, y in zip(V1, V2)]
+        result = [float(x - y) for x, y in zip(V1, V2)]
         print(f"Sous Vector is : {result}")
 
 
 def main():
     try:
-        a = [5.0, 10.0, 2.0]
-        b = [2.0, 4.0, 3.0]
+        a = [5, 10, 2]
+        b = [2, 4, 3]
         Calculator.dotproduct(a, b)
         Calculator.add_vec(a, b)
         Calculator.sous_vec(a, b)
