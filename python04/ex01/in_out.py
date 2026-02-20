@@ -5,20 +5,33 @@ RESET = "\033[0m"
 
 def square(x: int | float) -> int | float:
     """Returns the square of argument"""
+    if not isinstance(x, (int, float)):
+        print(f"{RED}Error: arg must be an int or a float{RESET}")
+        return None
+
     return x * x
 
 
 def pow(x: int | float) -> int | float:
     """Returns the exponentiation of argument by itself"""
+    if not isinstance(x, (int, float)):
+        print(f"{RED}Error: arg must be an int or a float{RESET}")
+        return None
+
     return x**x
 
 
 def outer(x: int | float, function) -> object:
     """Takes as argument a number and a function, and returns an object\
     that when called, returns the result of the arguments calculation"""
+    if not isinstance(x, (int, float)):
+        print(f"{RED}Error: arg must be an int or a float{RESET}")
+        return lambda: None
+
     value = x
 
     def inner() -> float:
+        """Nested function of outer() : applies a function to x"""
         nonlocal value
         # value : equivalent de static
         value = function(value)
