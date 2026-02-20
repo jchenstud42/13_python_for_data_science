@@ -58,6 +58,7 @@ def main():
         assert all(c.isalnum() or c == " " for c in sys.argv[1]), (
             "supports space and alphanumeric characters only"
         )
+
         print(str_to_morse(sys.argv[1], NESTED_MORSE))
 
     except AssertionError as error:

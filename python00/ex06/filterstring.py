@@ -8,7 +8,7 @@ def filterstring(S, N):
     """Function that output a list of words from S(string)
     that have a length greater than N(interger)"""
     # x : element de S.split, sur lequel on va verifier la condition lambda
-    return (x for x in S.split() if (lambda y: len(y) > N)(x))
+    return [x for x in S.split() if (lambda y: len(y) > N)(x)]
 
 
 def main():

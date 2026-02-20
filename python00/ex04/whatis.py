@@ -5,20 +5,19 @@ RESET = "\033[0m"
 
 
 def odd_or_even() -> int:
-    if len(sys.argv) <= 1:
-        return 1
-    elif len(sys.argv) > 2:
-        print(RED + "AssertionError: more than one argument is provided" + RESET)
-        return 1
-
     try:
-        arg = int(sys.argv[1])
-    except ValueError:
-        print(RED + "AssertionError: argument is not an interger" + RESET)
-        return 1
+        assert len(sys.argv) > 1, "please enter a number"
+        assert len(sys.argv) == 2, "more than one argument is provided"
+        assert sys.argv[1].isdigit(), "argument is not an integer"
 
-    print("I'm Even." if arg % 2 == 0 else "I'm Odd.")
-    return 0
+        arg = int(sys.argv[1])
+
+        print("I'm Even." if arg % 2 == 0 else "I'm Odd.")
+        return 0
+
+    except AssertionError as error:
+        print(f"{RED}AssertionError: {error}{RESET}")
+        return 1
 
 
 # -------------------- FUNCTION CALL --------------------

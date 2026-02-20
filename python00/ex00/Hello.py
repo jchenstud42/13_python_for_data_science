@@ -1,11 +1,12 @@
-# ----------------------- Different type of structures --------------------------- #
+# ------------------- Different type of structures ------------------------ #
 
 # LIST : duplicate elems, different types ok, mutable, ordered
-# Utile lorsqu'on a une suite d'elems, l'ordre est important et qu'on doit modifier
+# Utile lorsqu'on a une suite d'elems qu'on veut modif, l'ordre est important
 ft_list = ["Hello", "tata!"]
 
 # TUPLE : duplicate elems, different types ok, immutable, ordered
-# Utile lorsqu'on veut une structure fixe (Coord, RGB) ou que les valeurs ne changent pas
+# Utile lorsqu'on veut une structure fixe (Coord, RGB)
+# ou que les valeurs ne changent pas
 ft_tuple = ("Hello", "toto!")
 
 # SET : no dup, mutable, unordered, math operators
@@ -14,25 +15,23 @@ ft_set = {"Hello", "tutu!"}
 
 # DICTIONARY : key-value, no dup, mutable, ordered
 # Utile pour associer des donnes, representer un objet, acces rapide par nom
-ft_dict = {"Hello" : "titi!"}
+ft_dict = {"Hello": "titi!"}
 
 
-
-# --------- Modifying each data object to display the required greetings ----------#
+# ----- Modifying each data object to display the required greetings ------ #
 
 ft_list.remove("tata!")
 ft_list.append("World!")
 
 ft_tuple = ("Hello", "France!")
 
-ft_set.remove ("tutu!")
+ft_set.remove("tutu!")
 ft_set.add("Paris!")
 
 ft_dict["Hello"] = "42Paris!"
 
 
-
-# ------------------------------ Printing the result ------------------------------#
+# -------------------------- Printing the result -------------------------- #
 
 print(ft_list)
 print(ft_tuple)
