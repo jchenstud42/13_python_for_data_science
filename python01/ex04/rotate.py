@@ -33,7 +33,7 @@ def rotate_img(image):
 
         print(f"\nNew shape after transpose: {rotated.shape}")
         print(rotated)
-        plt.imshow(rotated, cmap="g", vmin=0, vmax=255)
+        plt.imshow(rotated, cmap="gray", vmin=0, vmax=255)
         plt.show()
 
     except Exception as error:

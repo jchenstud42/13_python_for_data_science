@@ -10,7 +10,7 @@ def ft_load(path: str):
     assert os.path.exists(path), "file not found"
     # split l'extension du nom du fichier, et check l'extension ([1])
     ext = os.path.splitext(path)[1]
-    assert ext in (".jpg", ".jpeg"), "only .jpg and .jpeg format allowed"
+    assert ext in (".jpg", ".jpeg"), "please provide a .jpg or .jpeg file"
 
     try:
         img = iio.imread(path)
